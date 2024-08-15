@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/Lotus_Bank_logo.webp.png">
+    <title>Book an appointment</title>
+    <link rel="stylesheet" href="book.css">
+    <script src="book.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e53bca8c03.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <img src="/img/Lotus_Bank_logo.webp.png" alt="Bank Logo">
+    </section>
+
+    <section class="body">
+        <div class="content">
+            <h1>BOOK AN APPOINTMENT</h1>
+
+            <form>
+                <div class="diff">
+                    <div class="input-group">
+                        <label for="first-name"> First Name:</label>
+                        <input type="text" name="first-name" id="name1" required placeholder="Enter your First Name">
+                        <div class="error"></div>
+                    </div>
+    
+                    <div class="input-group">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" name="last-name" id="name2" required placeholder="Enter your Last Name">
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email1" required placeholder="Enter your Email">
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="visiting">Who are you visiting?</label>
+                    <input type="email" name="email" id="email2" required placeholder="Enter email of staff">
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="number">Phone Number:</label>
+                    <input type="tel" name="number" id="number" required placeholder="Enter Phone number of staff">
+                    <div class="error"></div>
+                </div>
+
+                <div class="diff">
+                    <div class="input-group">
+                        <label for="date">Date:</label>
+                        <input type="date" name="date" id="date" required>
+                        <div class="error"></div>
+                    </div>
+    
+                    <div class="input-group">
+                        <label for="time">Time:</label>
+                        <input type="time" name="time" id="time" required>
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="info">Additional Info?</label>
+                    <textarea name="info" id="info"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <input type="submit" value="SUBMIT" data-modal-target="#modal">
+                </div>
+
+            </form>
+        </div>
+
+        <div id="confirmation-text" class="con-text"></div>
+    </section>
+</body>
+</html>

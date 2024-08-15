@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.8), rgba(4,9,30,0.8)), url(/img/bank-image.webp);
+}
+
+.header nav{
+    padding: 2% 4%;
+}
+
+.text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text-box h1{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-box button{
+    padding: 16px 55px;
+    font-size: 16px;
+    background-color: rgb(27, 0, 147);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.9s;
+}
+
+.text-box button:hover{
+    background-color: rgb(0, 195, 234);
+}
+
+/*RESPONSIVENESS*/
+@media(max-width:600px){
+    .text-box h1{
+        font-size: 1.8em;
+    }
+
+   .text-box button{
+        font-size: 12px;
+    }
+}
+
+@media(max-width:400px){
+    .text-box h1{
+        font-size: 1.5em;
+    }
+}

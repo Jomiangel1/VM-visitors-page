@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+}
+
+.header{
+    width: 100%;
+}
+
+.header img{
+    width: 6%;
+    min-width: 120px;
+}
+
+
+.body{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.body h1{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(27, 0, 147);
+    padding-bottom: 30px;
+}
+
+form{
+    margin: auto;
+}
+
+.input-group{
+    display: flex;
+    flex-flow: column;
+    padding: 7px;
+}
+
+.input-group input, textarea{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(205, 205, 205);
+    font-size: 16px;
+}
+
+textarea{
+    box-sizing: border-box;
+    height: 120px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.input-group input{
+    box-sizing: border-box;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.input-group input::placeholder{
+    font-size: 16px;
+}
+
+.input-group label{
+    font-size: 18px;
+    color: rgb(27, 0, 147);
+}
+
+.diff{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.diff .input-group{
+    flex: 1;
+}
+
+input[type="submit"]{
+    width: 30%;
+    margin: auto;
+    color: white;
+    background-color: rgb(3, 208, 209);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.con-text{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    background-color: white;
+    box-shadow: 5px 5px 50px rgba(34, 34, 34, 0.2);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    box-sizing: border-box;
+    padding: 70px 10px;
+    border-radius: 10px;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header img{
+    margin-bottom: 40px;
+}
+
+.modal-body h1{
+    font-size: 2rem;
+    color: rgb(27, 0, 147);
+}
+
+.modal-body p{ 
+    color: grey;
+    padding-top: 10px;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media(max-width:600px){
+    .header{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .content h1{
+        font-size: 30px;
+    }
+
+    .input-group input::placeholder{
+        font-size: 15px;
+    }
+}
+
+@media(max-width:400px){
+    .content h1{
+        font-size: 26px;
+    }
+
+    .input-group input::placeholder{
+        font-size: 14px;
+    }
+}
+

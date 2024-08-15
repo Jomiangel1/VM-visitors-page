@@ -37,7 +37,7 @@ form{
 .input-group{
     display: flex;
     flex-flow: column;
-    padding: 7px;
+    padding: 4px;
 }
 
 .input-group input, textarea{
@@ -91,61 +91,26 @@ input[type="submit"]{
     cursor: pointer;
 }
 
-.con-text{
+.input-group.success input{
+    border-color: rgb(9, 195, 114);
+}
+
+.input-group.error input{
+    border-color: rgb(255, 56, 96);
+}
+
+.input-group .error{
+    color: rgb(255, 56, 96);
+    font-size: 14px;
+    height: 13px;
+}
+
+.con-message{
     text-align: center;
     margin-top: 10px;
     font-size: 18px;
-}
-
-.modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-    background-color: white;
-    box-shadow: 5px 5px 50px rgba(34, 34, 34, 0.2);
-    text-align: center;
-    max-width: 90%;
-    width: 400px;
-    box-sizing: border-box;
-    padding: 70px 10px;
-    border-radius: 10px;
-}
-
-.modal.active{
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-header img{
-    margin-bottom: 40px;
-}
-
-.modal-body h1{
-    font-size: 2rem;
-    color: rgb(27, 0, 147);
-}
-
-.modal-body p{ 
-    color: grey;
-    padding-top: 10px;
-}
-
-#overlay{
-    position: fixed;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    pointer-events: none;
-    transition: 200ms ease-in-out;
-}
-
-#overlay.active{
-    opacity: 1;
-    pointer-events: all;
+    color: rgb(9, 195, 114);
+    font-weight: bold;
 }
 
 @media(max-width:600px){

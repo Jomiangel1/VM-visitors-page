@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/Lotus_Bank_logo.webp.png">
+    <link rel="icon" href="img/Lotus_Bank_logo.webp.png">
     <title>Book an appointment</title>
     <link rel="stylesheet" href="book.css">
     <script src="book.js" defer></script>
@@ -16,56 +16,56 @@
 </head>
 <body>
     <section class="header">
-        <img src="/img/Lotus_Bank_logo.webp.png" alt="Bank Logo">
+        <img src="img/Lotus_Bank_logo.webp.png" alt="Bank Logo">
     </section>
 
     <section class="body">
         <div class="content">
             <h1>BOOK AN APPOINTMENT</h1>
 
-            <form>
+            <form id="form" action="/">
                 <div class="diff">
                     <div class="input-group">
                         <label for="first-name"> First Name:</label>
-                        <input type="text" name="first-name" id="name1" required placeholder="Enter your First Name">
+                        <input type="text" name="first-name" id="name1"  placeholder="Enter your First Name">
                         <div class="error"></div>
                     </div>
     
                     <div class="input-group">
                         <label for="last-name">Last Name:</label>
-                        <input type="text" name="last-name" id="name2" required placeholder="Enter your Last Name">
+                        <input type="text" name="last-name" id="name2"  placeholder="Enter your Last Name">
                         <div class="error"></div>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email1" required placeholder="Enter your Email">
+                    <input type="text" name="email" id="email1"  placeholder="Enter your Email">
                     <div class="error"></div>
                 </div>
 
                 <div class="input-group">
                     <label for="visiting">Who are you visiting?</label>
-                    <input type="email" name="email" id="email2" required placeholder="Enter email of staff">
+                    <input type="text" name="email" id="email2"  placeholder="Enter email of staff">
                     <div class="error"></div>
                 </div>
 
                 <div class="input-group">
                     <label for="number">Phone Number:</label>
-                    <input type="tel" name="number" id="number" required placeholder="Enter Phone number of staff">
+                    <input type="tel" name="number" id="number"  placeholder="e.g 09000000000">
                     <div class="error"></div>
                 </div>
 
                 <div class="diff">
                     <div class="input-group">
                         <label for="date">Date:</label>
-                        <input type="date" name="date" id="date" required>
+                        <input type="date" name="date" id="date" >
                         <div class="error"></div>
                     </div>
     
                     <div class="input-group">
                         <label for="time">Time:</label>
-                        <input type="time" name="time" id="time" required>
+                        <input type="time" name="time" id="time">
                         <div class="error"></div>
                     </div>
                 </div>
@@ -76,13 +76,13 @@
                 </div>
 
                 <div class="input-group">
-                    <input type="submit" value="SUBMIT" data-modal-target="#modal">
+                    <input type="submit" value="SUBMIT" id="submit">
                 </div>
+
+                <div id="confirmation-message" class="con-message"></div>
 
             </form>
         </div>
-
-        <div id="confirmation-text" class="con-text"></div>
     </section>
 </body>
 </html>

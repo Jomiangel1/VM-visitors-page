@@ -23,50 +23,50 @@
         <div class="content">
             <h1>BOOK AN APPOINTMENT</h1>
 
-            <form id="form" action="/">
+            <form id="form">
                 <div class="diff">
                     <div class="input-group">
                         <label for="first-name"> First Name:</label>
                         <input type="text" name="first-name" id="name1"  placeholder="Enter your First Name">
-                        <div class="error"></div>
+                        <div class="error" id="error-name1"></div>
                     </div>
     
                     <div class="input-group">
                         <label for="last-name">Last Name:</label>
                         <input type="text" name="last-name" id="name2"  placeholder="Enter your Last Name">
-                        <div class="error"></div>
+                        <div class="error" id="error-name2"></div>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <label for="email">Email:</label>
                     <input type="text" name="email" id="email1"  placeholder="Enter your Email">
-                    <div class="error"></div>
+                    <div class="error" id="error-email1"></div>
                 </div>
 
                 <div class="input-group">
                     <label for="visiting">Who are you visiting?</label>
                     <input type="text" name="email" id="email2"  placeholder="Enter email of staff">
-                    <div class="error"></div>
+                    <div class="error" id="error-email2"></div>
                 </div>
 
                 <div class="input-group">
                     <label for="number">Phone Number:</label>
                     <input type="tel" name="number" id="number"  placeholder="e.g 09000000000">
-                    <div class="error"></div>
+                    <div class="error" id="error-number"></div>
                 </div>
 
                 <div class="diff">
                     <div class="input-group">
                         <label for="date">Date:</label>
                         <input type="date" name="date" id="date" >
-                        <div class="error"></div>
+                        <div class="error" id="error-date"></div>
                     </div>
     
                     <div class="input-group">
                         <label for="time">Time:</label>
                         <input type="time" name="time" id="time">
-                        <div class="error"></div>
+                        <div class="error" id="error-time"></div>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="input-group">
-                    <input type="submit" value="SUBMIT" id="submit">
+                    <input type="submit" value="SUBMIT" id="submit" onclick="validate(event)">
                 </div>
 
                 <div id="confirmation-message" class="con-message"></div>

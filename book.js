@@ -1,94 +1,112 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form');
-    const firstName = document.getElementById('name1');
-    const lastName = document.getElementById('name2');
-    const email = document.getElementById('email1');
-    const purpose = document.getElementById('email2');
-    const phoneNumber = document.getElementById('number');
-    const date = document.getElementById('date')
-    const time = document.getElementById('time')
-    const confirmationMessage = document.getElementById('confirmation-message')
+const firstName = document.getElementById('name1');
+const lastName = document.getElementById('name2');
+const email = document.getElementById('email1');
+const purpose = document.getElementById('email2');
+const phoneNumber = document.getElementById('number');
+const date = document.getElementById('date');
+const time = document.getElementById('time');
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        validateInputs();
-        form.reset();
+const errorFirstName = document.getElementById('error-name1');
+const errorLastName = document.getElementById('error-name2');
+const errorEmail = document.getElementById('error-email1');
+const errorPurpose = document.getElementById('error-email2');
+const errorPhoneNumber = document.getElementById('error-number');
+const errorDate = document.getElementById('error-date')
+const errorTime = document.getElementById('error-time')
 
-        confirmationMessage.innerText ='Booking successful! Check your mail.'
-    });
+function validate(event){
+    event.preventDefault();
 
-    const setError = (element, message) => {
-        const inputControl = element.parentElement;
-        const errorDisplay = inputControl.querySelector('.error');
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+    const emailValue = email.value.trim();
+    const purposeValue = purpose.value.trim();
+    const phoneNumberValue = phoneNumber.value.trim();
+    const dateValue = date.value.trim();
+    const timeValue = time.value.trim();
 
-        errorDisplay.innerText = message;
-        inputControl.classList.add('error');
-        inputControl.classList.remove('success');
-    };
+    errorFirstName.innerHTML = '';
+    errorLastName.innerHTML = '';
+    errorEmail.innerHTML = '';
+    errorPurpose.innerHTML = '';
+    errorPhoneNumber.innerHTML = '';
+    errorDate.innerHTML = '';
+    errorTime.innerHTML = '';
 
-    const setSuccess = element => {
-        const inputControl = element.parentElement;
-        const errorDisplay = inputControl.querySelector('.error');
+    let isValid = true
 
-        errorDisplay.innerText = '';
-        inputControl.classList.add('success');
-        inputControl.classList.remove('error');
-    };
+    if(firstNameValue === ''){
+        errorFirstName.innerHTML = 'First Name is required';
+        firstName.style.borderColor = 'red';
+        isValid = false;
+    } else{
+        errorFirstName.innerHTML = ''
+        firstName.style.borderColor = 'green';
+    }
 
-    const validateInputs = () => {
-        const firstNameValue = firstName.value.trim();
-        const lastNameValue = lastName.value.trim();
-        const emailValue = email.value.trim();
-        const purposeValue = purpose.value.trim();
-        const phoneNumberValue = phoneNumber.value.trim();
-        const dateValue = date.value.trim()
-        const timeValue = time.value.trim()
+    if(lastNameValue === ''){
+        errorLastName.innerHTML = 'Last Name is required';
+        lastName.style.borderColor = 'red';
+        isValid = false;
 
-        if (firstNameValue === '') {
-            setError(firstName, 'First Name is required');
-        } else {
-            setSuccess(firstName);
-        }
+    } else{
+        errorLastName.innerHTML = '';
+        lastName.style.borderColor = 'green';
+    }
 
-        if (lastNameValue === '') {
-            setError(lastName, 'Last Name is required');
-        } else {
-            setSuccess(lastName);
-        }
+    if(emailValue === '' || !emailValue.includes('@')){
+        errorEmail.innerHTML = 'A valid email is required';
+        email.style.borderColor = 'red';
+        isValid = false;
 
-        if (emailValue === '') {
-            setError(email, 'Email is required');
-        } else if (emailValue.indexOf('@') === -1) {
-            setError(email, 'Provide a valid email address');
-        } else {
-            setSuccess(email);
-        }
+    } else{
+        errorEmail.innerHTML = '';
+        email.style.borderColor = 'green';
+    }
 
-        const domain = 'lotusbank.com';
-        if (purposeValue === '') {
-            setError(purpose, 'Bank email is required');
-        } else if (!purposeValue.endsWith(`@${domain}`)) {
-            setError(purpose, `Provide a valid ${domain} email`);
-        } else {
-            setSuccess(purpose);
-        }
+    const domain = 'lotusbank.com';
+    if(purposeValue === '' || !purposeValue.endsWith(`@${domain}`)){
+        errorPurpose.innerHTML = 'Email must end with @lotusbank.com';
+        purpose.style.borderColor = 'red';
+        isValid = false;
 
-        if (phoneNumberValue === '' || phoneNumberValue.length !== 11) {
-            setError(phoneNumber, 'Please enter a valid 11-digit phone number.');
-        } else {
-            setSuccess(phoneNumber);
-        }
+    } else{
+        errorPurpose.innerHTML = '';
+        purpose.style.borderColor = 'green';
+    }
 
-        if (dateValue === '') {
-            setError(date, 'Pick a date');
-        } else {
-            setSuccess(date);
-        }
+    if(phoneNumberValue === '' || phoneNumberValue.length !== 11){
+        errorPhoneNumber.innerHTML = 'Enter a valid Phone number';
+        phoneNumber.style.borderColor = 'red';
+        isValid = false;
 
-        if (timeValue === '') {
-            setError(time, 'Pick a time');
-        } else {
-            setSuccess(time);
-        }
-    };
-});
+    } else{
+        errorPhoneNumber.innerHTML = '';
+        phoneNumber.style.borderColor = 'green';
+    }
+
+    if(dateValue === ''){
+        errorDate.innerHTML = 'Pick a date';
+        date.style.borderColor = 'red';
+        isValid = false;
+
+    } else {
+        errorDate.innerHTML = '';
+        date.style.borderColor = 'green';
+    }
+
+    if(timeValue === ''){
+        errorTime.innerHTML = 'Pick a time';
+        time.style.borderColor = 'red';
+        isValid = false;
+
+    } else{
+        errorTime.innerHTML = '';
+        time.style.borderColor = 'green';
+    }
+
+    if(isValid){
+        document.getElementById('confirmation-message').innerHTML = "Booking Successful! Check your mail";
+        document.getElementById('form').reset();
+    }
+} 

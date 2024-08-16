@@ -106,7 +106,28 @@ function validate(event){
     }
 
     if(isValid){
-        document.getElementById('confirmation-message').innerHTML = "Booking Successful! Check your mail";
+        document.getElementById('overlay').classList.remove('no-click');
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('success-message').style.display = 'flex';
         document.getElementById('form').reset();
+
+        document.body.classList.add('no-scroll');
+
+
+        document.getElementById('overlay').addEventListener('click', function(){
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('success-message').style.display = 'none';
+
+            document.body.classList.remove('no-scroll');
+
+
+            firstName.style.borderColor = '';
+            lastName.style.borderColor = '';
+            email.style.borderColor = '';
+            purpose.style.borderColor = '';
+            phoneNumber.style.borderColor = '';
+            date.style.borderColor = '';
+            time.style.borderColor = '';
+        })
     }
 } 

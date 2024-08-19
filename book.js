@@ -33,7 +33,7 @@ function validate(event){
     errorDate.innerHTML = '';
     errorTime.innerHTML = '';
 
-    let isValid = true
+    let isValid = true;
 
     if(firstNameValue === ''){
         errorFirstName.innerHTML = 'First Name is required';
